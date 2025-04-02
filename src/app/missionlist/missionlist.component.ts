@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { MissionfilterComponent } from '../missionfilter/missionfilter.component';
 import { Router, RouterLink } from '@angular/router';
+import { LaunchesService } from '../launches.service';
 
 @Component({
   selector: 'app-missionlist',
@@ -13,25 +14,22 @@ import { Router, RouterLink } from '@angular/router';
 @Injectable({providedIn: 'root'})
 export class MissionlistComponent implements OnInit {
   httpClient = inject(HttpClient);
+  launchesService = inject(LaunchesService);
   launchList: any[] = [];
   filter: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.launchList = this.launchesService.fetchData();
+  }
 
   ngOnInit() {
-    this.fetchData();
+
   }
 
   filterYear(selectedFilter: any) {
     this.filter = selectedFilter;
 
     this.httpClient.get(`https://api.spacexdata.com/v3/launches?launch_year=${this.filter}`).subscribe((data: any) => {
-      this.launchList = data;
-    });
-  }
-
-  fetchData() {
-    this.httpClient.get("https://api.spacexdata.com/v3/launches").subscribe((data: any) => {
       this.launchList = data;
     });
   }
