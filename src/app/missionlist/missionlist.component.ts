@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { MissionfilterComponent } from '../missionfilter/missionfilter.component';
 import { Router, RouterLink } from '@angular/router';
 import { LaunchesService } from '../launches.service';
+import { Launch } from '../shared/launch';
 
 @Component({
   selector: 'app-missionlist',
@@ -15,7 +16,7 @@ import { LaunchesService } from '../launches.service';
 export class MissionlistComponent implements OnInit {
   httpClient = inject(HttpClient);
   launchesService = inject(LaunchesService);
-  launchList: any[] = [];
+  launchList: Launch[] = [];
   filter: any;
 
   constructor(private router: Router) {
