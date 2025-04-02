@@ -12,7 +12,7 @@ import { LaunchesService } from '../launches.service';
   styleUrl: './missionlist.component.css'
 })
 @Injectable({providedIn: 'root'})
-export class MissionlistComponent {
+export class MissionlistComponent implements OnInit {
   httpClient = inject(HttpClient);
   launchesService = inject(LaunchesService);
   launchList: any[] = [];
@@ -20,6 +20,10 @@ export class MissionlistComponent {
 
   constructor(private router: Router) {
     this.launchList = this.launchesService.fetchData();
+  }
+
+  ngOnInit() {
+    this.filterYear("");
   }
 
   filterYear(selectedFilter: any) {

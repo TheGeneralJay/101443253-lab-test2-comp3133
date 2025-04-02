@@ -12,7 +12,5 @@ export class LaunchesService {
     this.httpClient.get("https://api.spacexdata.com/v3/launches").subscribe((data: any) => {
       this.launchList = data;
     });
-
-    return this.launchList;
   }
 }
