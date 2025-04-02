@@ -1,4 +1,7 @@
 <h1>Mission List</h1>
+<app-missionfilter
+  (selectedFilterEvent)="filterYear($event)"
+></app-missionfilter>
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col" style="width: 20rem" *ngFor="let launch of launchList">
     <div class="card h-100" style="width: 18rem">

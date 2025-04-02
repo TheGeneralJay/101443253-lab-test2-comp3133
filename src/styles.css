@@ -7,3 +7,9 @@ body {
 h1 {
   text-align: center;
 }
+
+button {
+  margin: 10px;
+}
+
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,16 @@
+<mat-form-field>
+  <mat-label>Launch Years</mat-label>
+  <mat-select [(ngModel)]="selectedFilter" name="year">
+    @for (year of launchYears; track year) {
+    <mat-option [value]="year">{{ year }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+<br />
+<button type="button" class="btn btn-info" (click)="selectYear(selectedFilter)">
+  Filter
+</button>
+
+<button type="button" class="btn btn-secondary" (click)="clearFilter()">
+  Clear Filter
+</button>
