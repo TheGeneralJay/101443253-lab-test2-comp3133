@@ -39,20 +39,31 @@
       <div class="card-footer">
         <strong>Links:</strong> <br />
         <!-- ARTICLE LINK -->
-        <a class="card-link" [href]="launch.links.article_link">Article</a>
+        <a class="card-link" target="_blank" [href]="launch.links.article_link"
+          >Article</a
+        >
         <!-- WIKIPEDIA LINK -->
-        <a class="card-link" [href]="launch.links.wikipedia">Wikipedia</a>
+        <a class="card-link" target="_blank" [href]="launch.links.wikipedia"
+          >Wikipedia</a
+        >
         <!-- VIDEO LINK -->
-        <a class="card-link" [href]="launch.links.video_link">Video</a>
+        <a class="card-link" target="_blank" [href]="launch.links.video_link"
+          >Video</a
+        >
         <!-- MISSION PATCH -->
-        <a class="card-link" [href]="launch.links.mission_patch_small">Patch</a>
+        <a
+          class="card-link"
+          target="_blank"
+          [href]="launch.links.mission_patch_small"
+          >Patch</a
+        >
 
         <!-- MORE DETAILS -->
         <div class="details">
           <button
             type="button"
             class="btn btn-info"
-            [routerLink]="['/missiondetails', launch.flight_number]"
+            [routerLink]="['/missiondetails/', launch.flight_number]"
           >
             Detailed View
           </button>

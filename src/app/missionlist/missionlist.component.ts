@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { MissionfilterComponent } from '../missionfilter/missionfilter.component';
 import { Router, RouterLink } from '@angular/router';
 import { LaunchesService } from '../launches.service';
-import { Launch } from '../shared/launch';
 
 @Component({
   selector: 'app-missionlist',
@@ -13,18 +12,14 @@ import { Launch } from '../shared/launch';
   styleUrl: './missionlist.component.css'
 })
 @Injectable({providedIn: 'root'})
-export class MissionlistComponent implements OnInit {
+export class MissionlistComponent {
   httpClient = inject(HttpClient);
   launchesService = inject(LaunchesService);
-  launchList: Launch[] = [];
+  launchList: any[] = [];
   filter: any;
 
   constructor(private router: Router) {
     this.launchList = this.launchesService.fetchData();
-  }
-
-  ngOnInit() {
-
   }
 
   filterYear(selectedFilter: any) {
