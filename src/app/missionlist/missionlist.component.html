@@ -1,0 +1,80 @@
+<h1>Mission List</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" style="width: 20rem" *ngFor="let launch of launchList">
+    <div class="card h-100" style="width: 18rem">
+      <div class="card-body">
+        <!-- MISSION NAME -->
+        <h5 class="card-title">{{ launch.mission_name }}</h5>
+        <!-- MISSION PATCH -->
+        <img
+          [src]="launch.links.mission_patch_small"
+          width="80px"
+          class="card-img-top"
+          alt="Mission patch"
+        />
+        <!-- MISSION DETAILS -->
+        <p class="card-text">{{ launch.details }}</p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <!-- FLIGHT NUMBER -->
+        <li class="list-group-item">
+          <strong>Flight Number:</strong> {{ launch.flight_number }}
+        </li>
+        <!-- LAUNCH YEAR -->
+        <li class="list-group-item">
+          <strong>Launched:</strong> {{ launch.launch_year }}
+        </li>
+        <!-- ROCKET -->
+        <li class="list-group-item">
+          <strong>Rocket Name:</strong> {{ launch.rocket.rocket_name }} <br />
+          <strong>Rocket Type:</strong> {{ launch.rocket.rocket_type }}
+        </li>
+      </ul>
+
+      <!-- LINKS -->
+      <div class="card-footer">
+        <strong>Links:</strong> <br />
+        <!-- ARTICLE LINK -->
+        <a class="card-link" [href]="launch.links.article_link">Article</a>
+        <!-- WIKIPEDIA LINK -->
+        <a class="card-link" [href]="launch.links.wikipedia">Wikipedia</a>
+        <!-- VIDEO LINK -->
+        <a class="card-link" [href]="launch.links.video_link">Video</a>
+        <!-- MISSION PATCH -->
+        <a class="card-link" [href]="launch.links.mission_patch_small">Patch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr class="table-dark">
+      <th>Mission Patch</th>
+      <th>Flight Number</th>
+      <th>Mission Name</th>
+      <th>Launch Year</th>
+      <th>Details</th>
+      <th>Rocket</th>
+      <th>Links</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let launch of launchList">
+      <td>
+        <img
+          class="mission-patch"
+          width="100px"
+          [src]="launch.links.mission_patch_small"
+          alt=""
+        />
+      </td>
+      <td>{{ launch.flight_number }}</td>
+      <td>{{ launch.mission_name }}</td>
+      <td>{{ launch.launch_year }}</td>
+      <td>{{ launch.details }}</td>
+    </tr>
+  </tbody>
+</table> -->
