@@ -12,4 +12,12 @@ button {
   margin: 10px;
 }
 
+.details {
+  text-align: center;
+}
+
+#mission-details {
+  margin: auto;
+}
+
 body { font-family: Roboto, "Helvetica Neue", sans-serif; }

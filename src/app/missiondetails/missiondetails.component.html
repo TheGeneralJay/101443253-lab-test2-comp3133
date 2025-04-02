@@ -1,0 +1,57 @@
+<h1>Mission Details</h1>
+
+<div id="mission-details" class="card" style="width: 50rem">
+  <div class="card-body">
+    <!-- MISSION NAME -->
+    <h5 class="card-title">{{ mission.mission_name }}</h5>
+    <!-- MISSION PATCH -->
+    <img
+      [src]="mission.links.mission_patch_small"
+      width="80px"
+      class="card-img-top"
+      alt="Mission patch"
+    />
+    <!-- MISSION DETAILS -->
+    <p class="card-text">{{ mission.details }}</p>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <!-- FLIGHT NUMBER -->
+    <li class="list-group-item">
+      <strong>Flight Number:</strong> {{ mission.flight_number }}
+    </li>
+    <!-- LAUNCH YEAR -->
+    <li class="list-group-item">
+      <strong>Launched:</strong> {{ mission.launch_year }}
+    </li>
+    <!-- ROCKET -->
+    <li class="list-group-item">
+      <strong>Rocket Name:</strong> {{ mission.rocket.rocket_name }} <br />
+      <strong>Rocket Type:</strong> {{ mission.rocket.rocket_type }}
+    </li>
+  </ul>
+
+  <!-- LINKS -->
+  <div class="card-footer">
+    <strong>Links:</strong> <br />
+    <!-- ARTICLE LINK -->
+    <a class="card-link" [href]="mission.links.article_link">Article</a>
+    <!-- WIKIPEDIA LINK -->
+    <a class="card-link" [href]="mission.links.wikipedia">Wikipedia</a>
+    <!-- VIDEO LINK -->
+    <a class="card-link" [href]="mission.links.video_link">Video</a>
+    <!-- MISSION PATCH -->
+    <a class="card-link" [href]="mission.links.mission_patch_small">Patch</a>
+
+    <!-- MORE DETAILS -->
+    <div class="details">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        [routerLink]="['/missionlist']"
+      >
+        Back
+      </button>
+    </div>
+  </div>
+</div>
